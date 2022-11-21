@@ -12,8 +12,7 @@ class AppUnknownErrorDisplay extends StatefulWidget {
   const AppUnknownErrorDisplay(
       {super.key,
       this.displayText = 'An unknown error has occurred.',
-      this.displaySubtext =
-          'Please try again when you are ready.'});
+      this.displaySubtext = 'Please try again when you are ready.'});
 
   @override
   State<AppUnknownErrorDisplay> createState() => _AppUnknownErrorDisplayState();

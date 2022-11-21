@@ -22,15 +22,34 @@ class ApiHelper {
 
     Response? response;
     try {
-      appLogger(uri.toString(), tag: '--> api helper - uri', );
-      appLogger(requestHeaders.toString(), tag: '--> api helper - headers', );
-      appLogger(encodedjson.toString(), tag: '--> api helper - posting body', );
-      response = await http.post(uri, headers: requestHeaders, body: encodedjson);
-      appLogger(response.statusCode.toString(), tag: '<-- api helper - status', );
-      appLogger(response.headers.toString(), tag: '<-- api helper - headers', );
+      appLogger(
+        uri.toString(),
+        tag: '--> api helper - uri',
+      );
+      appLogger(
+        requestHeaders.toString(),
+        tag: '--> api helper - headers',
+      );
+      appLogger(
+        encodedjson.toString(),
+        tag: '--> api helper - posting body',
+      );
+      response =
+          await http.post(uri, headers: requestHeaders, body: encodedjson);
+      appLogger(
+        response.statusCode.toString(),
+        tag: '<-- api helper - status',
+      );
+      appLogger(
+        response.headers.toString(),
+        tag: '<-- api helper - headers',
+      );
       prettyPrintJson(response.body);
     } catch (e) {
-      appLogger(e.toString(), tag: 'api error', );
+      appLogger(
+        e.toString(),
+        tag: 'api error',
+      );
       if (response != null) {
         throw ApiException(response.reasonPhrase, response.statusCode);
       } else {
@@ -61,15 +80,34 @@ class ApiHelper {
 
     Response? response;
     try {
-      appLogger(uri.toString(), tag: '--> api helper - uri', );
-      appLogger(requestHeaders.toString(), tag: '--> api helper - headers', );
-      appLogger(encodedjson.toString(), tag: '--> api helper - put body', );
-      response = await http.put(uri, headers: requestHeaders, body: encodedjson);
-      appLogger(response.statusCode.toString(), tag: '<-- api helper - status', );
-      appLogger(response.headers.toString(), tag: '<-- api helper - headers', );
+      appLogger(
+        uri.toString(),
+        tag: '--> api helper - uri',
+      );
+      appLogger(
+        requestHeaders.toString(),
+        tag: '--> api helper - headers',
+      );
+      appLogger(
+        encodedjson.toString(),
+        tag: '--> api helper - put body',
+      );
+      response =
+          await http.put(uri, headers: requestHeaders, body: encodedjson);
+      appLogger(
+        response.statusCode.toString(),
+        tag: '<-- api helper - status',
+      );
+      appLogger(
+        response.headers.toString(),
+        tag: '<-- api helper - headers',
+      );
       prettyPrintJson(response.body);
     } catch (e) {
-      appLogger(e.toString(), tag: 'api error', );
+      appLogger(
+        e.toString(),
+        tag: 'api error',
+      );
       if (response != null) {
         throw ApiException(response.reasonPhrase, response.statusCode);
       }
@@ -97,16 +135,31 @@ class ApiHelper {
 
     Response? response;
     try {
-      appLogger(uri.toString(), tag: '--> api helper - uri', );
-      appLogger(requestHeaders.toString(), tag: '--> api helper - headers', );
+      appLogger(
+        uri.toString(),
+        tag: '--> api helper - uri',
+      );
+      appLogger(
+        requestHeaders.toString(),
+        tag: '--> api helper - headers',
+      );
       response = await http.get(uri, headers: requestHeaders);
-      appLogger(response.statusCode.toString(), tag: '<-- api helper - status', );
-      appLogger(response.headers.toString(), tag: '<-- api helper - headers', );
+      appLogger(
+        response.statusCode.toString(),
+        tag: '<-- api helper - status',
+      );
+      appLogger(
+        response.headers.toString(),
+        tag: '<-- api helper - headers',
+      );
       if (response.body.isNotEmpty) {
         prettyPrintJson(response.body);
       }
     } catch (e) {
-      appLogger(e.toString(), tag: 'api error', );
+      appLogger(
+        e.toString(),
+        tag: 'api error',
+      );
       if (response != null) {
         throw ApiException(response.reasonPhrase, response.statusCode);
       }

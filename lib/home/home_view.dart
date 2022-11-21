@@ -46,7 +46,8 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     onTap: () {
                       appLogger('settings tap');
-                      Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
                         return const SettingsView();
                       }));
                     },

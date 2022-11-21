@@ -1,4 +1,3 @@
-
 abstract class ApiCallResponse {
   int status;
   dynamic data;
@@ -21,9 +20,9 @@ class ApiCallListResponse extends ApiCallResponse {
   @override
   dynamic listData;
 
-  ApiCallListResponse(this.status, {this.listData}) : super(status, null, listData);
+  ApiCallListResponse(this.status, {this.listData})
+      : super(status, null, listData);
 }
-
 
 class ApiException implements Exception {
   String? cause;
