@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_testing/chart/chart_bloc.dart';
 import 'package:flutter_testing/chart/chart_view.dart';
+import 'package:flutter_testing/food/food_bloc.dart';
+import 'package:flutter_testing/food/food_view.dart';
 import 'package:flutter_testing/settings/settings_bloc.dart';
 import 'package:flutter_testing/settings/settings_view.dart';
 import 'package:flutter_testing/util/logging/logger.dart';
@@ -110,30 +112,30 @@ class _HomeViewState extends State<HomeView> {
                 },
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(16),
-            //   child: OpenContainer(
-            //     closedBuilder: (context, action) {
-            //       return ListTile(
-            //         tileColor: Theme.of(context).cardColor,
-            //         title: Text('Testing',
-            //             style: Theme.of(context).textTheme.headline5),
-            //         trailing: Icon(
-            //           Icons.chevron_right,
-            //           size: 16,
-            //           color: Theme.of(context).textTheme.headline5?.color,
-            //         ),
-            //       );
-            //     },
-            //     openBuilder: (BuildContext context,
-            //         void Function({Object? returnValue}) action) {
-            //       return BlocProvider(
-            //         create: (context) => ChartBloc(),
-            //         child: ChartView(true),
-            //       );
-            //     },
-            //   ),
-            // ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: OpenContainer(
+                closedBuilder: (context, action) {
+                  return ListTile(
+                    tileColor: Theme.of(context).cardColor,
+                    title: Text('Testing',
+                        style: Theme.of(context).textTheme.headline5),
+                    trailing: Icon(
+                      Icons.chevron_right,
+                      size: 16,
+                      color: Theme.of(context).textTheme.headline5?.color,
+                    ),
+                  );
+                },
+                openBuilder: (BuildContext context,
+                    void Function({Object? returnValue}) action) {
+                  return BlocProvider(
+                    create: (context) => FoodBloc(),
+                    child: const FoodView(),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
